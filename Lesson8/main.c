@@ -2,7 +2,10 @@
 #include <stdint.h>
 #include <string.h>
 #include <math.h>
-
+/*На стандартном потоке ввода задан текст, состоящий из латинских букв
+ и цифр и оканчивающийся точкой. На стандартный поток вывода вывести цифру,
+наиболее часто встречающуюся в тексте (если таких цифр несколько,
+ вывести любую из них).*/
 void get_char_array(void);
 int array_get_max(int counters[], int sz);
 
@@ -23,15 +26,13 @@ void get_char_array(void){
     char c = 0;
     char a;
     
-
+        printf("Введите любые символы\n");
         while((c = getchar()) != '.'){
             counters[c]++;
         }
-        for (int i = 0; i<256;i++){
-            printf("%d = %d\n", i, counters[i]);
-        }
+
         a = array_get_max(counters, 256);
-            printf("%c = \n", a);
+            printf("Чаще всего попадающийся символ - %c \n", a);
         
 }
 int array_get_max(int counters[], int sz)

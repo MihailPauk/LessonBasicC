@@ -1,3 +1,4 @@
+#pragma once
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -12,9 +13,4 @@
 В случае ошибки открытия файла, вывести сообщение о невозможности открытия исходного файла.
 Режим работы в файлами - двоичный( "rb", "wb" ) и так далее*/
 
-int main(int argc, char **argv)
-{
-    print_copy_fyle();
-    
-    return 0;
-}
+int print_copy_fyle(void);

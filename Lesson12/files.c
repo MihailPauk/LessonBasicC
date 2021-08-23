@@ -15,7 +15,7 @@ void print_type(struct stat *st)
     }
 }
 
-void print_dir_contents(const char *strdir, bool all)
+void print_dir_contents(const char *strdir, bool all, bool recurse)
 {
     DIR *dir;
     struct dirent *entry;
@@ -37,6 +37,9 @@ void print_dir_contents(const char *strdir, bool all)
             if (stat(full_name, &file_info) == 0) {
                 print_type(&file_info);
                 printf("sz %10ld ", file_info.st_size);
+                if (recurse) {
+                    print_dir_contents(full_name, all, recurse);
+                }
             }
             printf(" %s\n", full_name);
         }

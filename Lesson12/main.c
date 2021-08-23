@@ -19,6 +19,7 @@ int main(int argc, char **argv)
 
     int ret;
     bool print_all = false;
+    bool recurse = false;
     char *dir;
 
     if (argc == 1) {
@@ -45,18 +46,13 @@ int main(int argc, char **argv)
                 break;
             }
             case 'f' : {
-                char path[255] = { 0 };
-
-                getcwd(path, 255);
-                printf("path = %s\n", path);
-                print_dir_contents(path, print_all);
-    
+                recurse = true;
                 break;
             }
         }
     }
 
-    print_dir_contents(dir, print_all);
+    print_dir_contents(dir, print_all, recurse);
 
 }
 

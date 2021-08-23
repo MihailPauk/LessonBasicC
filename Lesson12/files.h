@@ -9,4 +9,4 @@
 #include <sys/stat.h>
 #include <stdbool.h>
 
-void print_dir_contents(const char *strdir, bool all);
+void print_dir_contents(const char *strdir, bool all, bool recurse);

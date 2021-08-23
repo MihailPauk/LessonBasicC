@@ -34,7 +34,7 @@ int print_copy_fyle(void)
     fseek(file_1, 0, SEEK_END);
     size = ftell(file_1);
     
-
+    printf("Введите имя второго файла: \n");
     scanf("%s", file_name_2);
     file_2 = fopen(file_name_2, "wb");
     
